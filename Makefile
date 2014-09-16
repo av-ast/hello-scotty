@@ -7,7 +7,6 @@ start: stop
 	PORT=5000 ./dist/build/hello-scotty/hello-scotty &
 
 stop:
-	pgrep hello-scotty
-	for i in `pgrep hello-scotty`; do echo ">$i<"; kill -9 $i; done
+	for p in `pgrep hello` ; do kill -9 $$p ; done
 
 .PHONY: build run stop
